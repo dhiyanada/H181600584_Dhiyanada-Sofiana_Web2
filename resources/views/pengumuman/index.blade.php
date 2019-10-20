@@ -7,7 +7,7 @@
                 <div class="card-header">Pengumuman</div>
 
                 <div class="card-body">
-                <a href="{!! route('artikel.create')!!}" class="btn btn-success">
+                <a href="{!! route('pengumuman.create')!!}" class="btn btn-success">
                 Tambah Data
                 </a>
                 <table border="1">

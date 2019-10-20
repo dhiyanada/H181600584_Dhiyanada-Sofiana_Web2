@@ -1,54 +1,54 @@
 @csrf
-<br>
+
 <div class="form-group row">
-        <label for="judul" class="col-md-2 col-form-label text-md-right">{{ __('Judul') }}</label>
-           
+        <label for="judul" class="col-md-4 col-form-label text-md-right">{{ __('Judul') }}</label>
             <div class="col-md-6">
                 <input id="judul" type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ old('judul') }}" required>
-           
-                @error('judul')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+
+             @error('judul')
+              <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+              </span>
+              @enderror
             </div>
 </div>
+
 <div class="form-group row">
-        <label for="kategori_artikel_id" class="col-md-2 col-form-label text-md-right">{{ __('Kategori Artikel ID') }}</label>
-            
+        <label for="keterangan" class="col-md-4 col-form-label text-md-right">{{ __('keterangan') }}</label>
             <div class="col-md-6">
+                <input id="keterangan" type="text" class="form-control @error('keterangan') is-invalid @enderror" name="isi" value="{{ old('keterangan') }}" required>
 
-{!! form::select('kategori_pengumuman_id', $kategoriPengumuman,null,["class"=>"form-control", "required"])!!}
-            
-                @error('kategori_pengumuman_id')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+             @error('isi')
+              <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+              </span>
+              @enderror
             </div>
 </div>
+
 <div class="form-group row">
-        <label for="isi" class="col-md-2 col-form-label text-md-right">{{ __('Isi') }}</label>
-            
+        <label for="kategori_pengumuman_id" class="col-md-4 col-form-label text-md-right">{{ __('Kategori Pengumuman') }}</label>
             <div class="col-md-6">
-                {!! form::textarea('isi', null ['class'=>'rorm-control']); !!}
-
-                @error('isi')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+            <input id="kategori_pengumuman_id" type="text" class="form-control @error('kategori_pengumuman_id') is-invalid @enderror" name="kategori_pengumuman_id" value="{{ old('kategori_pengumuman_id') }}" required>
+                
+             @error('kategori_berita_id')
+              <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+              </span>
+              @enderror
             </div>
 </div>
-        <input id="users_id" type="hidden" class="form-control @error('users_id') is-invalid @enderror" name="users_id" value="{{ Auth::user()->id }}" required autocomplete="users_id" autofocus>
 
-<div class="form-group row mb-0">
-        <div class="col-md-10 offset-md-2">
-             <button type="submit" class="btn btn-primary">
-                Simpan Data
-            </button>
-            <a href="{!! route('artikel.pengumuman') !!}" class="btn btn-danger">
-            Batal
-            </a>
-        </div>
-</div>
+
+<input id="users_id" type="hidden" class="form-control @error('users_id') is-invalid @enderror" name="users_id" value="{{ Auth::id() }}" required>
+
+    <div class="form-group row mb-0">
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                    {{ __('Simpan Data') }}
+                    </button>
+                    <a href="{!! route('pengumuman.index') !!}" class="btn btn-danger">
+                    {{ __('Batal') }}
+                    </a>
+                </div>
+    </div>

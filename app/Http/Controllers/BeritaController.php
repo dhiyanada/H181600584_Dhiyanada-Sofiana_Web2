@@ -1,20 +1,20 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Berital;
-use app\KategoriBerita;
+use App\Berita;
+use App\KategoriBerita;
 class BeritaController extends Controller
 {
     public function index(){
       
-        $listBerita=Berita::all(); 
-        return view('berital.index',compact('listBerita'));
+        $listBerita=Berita::all(); //select*from artikel
+        return view('berita.index',compact('listBerita'));
         
     }
     public function show($id){
         
-        $Berita=Berita::find($id);
-        return view('berits.show',compact('berita'));
+        $berita=Berita::find($id);
+        return view('berita.show',compact('berita'));
     }
     public function create(){
         $kategoriBerita=KategoriBerita::pluck('nama','id');

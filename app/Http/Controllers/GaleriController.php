@@ -2,19 +2,19 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Galeri;
-use app\KategoriGaleri;
+use App\KategoriGaleri;
 class GaleriController extends Controller
 {
     public function index(){
       
-        $listGaleri=Galeri::all();
+        $listGaleri=Galeri::all(); //select*from galeri
         return view('galeri.index',compact('listGaleri'));
         
     }
     public function show($id){
         
         $Galeri=Galeri::find($id);
-        return view('artikel.show',compact('Artikel'));
+        return view('galeri.show',compact('Galeri'));
     }
     public function create(){
         $kategoriGaleri=KategoriGaleri::pluck('nama','id');

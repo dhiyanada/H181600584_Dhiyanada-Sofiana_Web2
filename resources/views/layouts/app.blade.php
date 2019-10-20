@@ -41,7 +41,13 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="nav-link" href="{{ route('kategori_artikel.index') }}">{{ __('Kategori Artikel') }}</a>
+                                <a class="nav-link" href="{{ route('kategori_artikel.index') }}">{{ __('Kategori Berita') }}</a>
+                                <a class="nav-link" href="{{ route('kategori_artikel.index') }}">{{ __('Kategori Galeri') }}</a>
+                                <a class="nav-link" href="{{ route('kategori_artikel.index') }}">{{ __('Kategori Pengumuman') }}</a>
                                 <a class="nav-link" href="{{ route('artikel.index') }}">{{ __('Artikel') }}</a>
+                                <a class="nav-link" href="{{ route('artikel.index') }}">{{ __('Berita') }}</a>
+                                <a class="nav-link" href="{{ route('artikel.index') }}">{{ __('Galeri') }}</a>
+                                <a class="nav-link" href="{{ route('artikel.index') }}">{{ __('Pengumuman') }}</a>
                             </li>
 
         

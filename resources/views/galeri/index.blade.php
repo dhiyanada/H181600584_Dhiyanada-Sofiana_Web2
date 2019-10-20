@@ -13,8 +13,9 @@
                 <table border="1">
     <tr>
     <td>ID</td>
-    <td>Judul</td>
-    <td>Isi</td>
+    <td>Nama</td>
+    <td>Keterangan</td>
+    <td>Path</td>
     <td>Users ID</td>
     <td>Kategori Galeri ID</td>
     <td>Create</td>
@@ -25,8 +26,9 @@
     
     <tr>
     <td>{!! $item->id !!}</td>
-    <td>{!! $item->judul !!}</td>
-    <td>{!! $item->isi !!}</td>
+    <td>{!! $item->nama !!}</td>
+    <td>{!! $item->keterangan !!}</td>
+    <td>{!! $item->path !!}</td>
     <td>{!! $item->users_id !!}</td>
     <td>{!! $item->kategori_galeri_id !!}</td>
     <td>{!! $item->created_at!!}</td>

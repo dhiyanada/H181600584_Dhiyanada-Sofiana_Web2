@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Artikel;
-use app\KategoriArtikel;
+use App\KategoriArtikel;
 class ArtikelController extends Controller
 {
     public function index(){
@@ -13,8 +13,8 @@ class ArtikelController extends Controller
     }
     public function show($id){
         
-        $Artikel=Artikel::find($id);
-        return view('artikel.show',compact('Artikel'));
+        $artikel=Artikel::find($id);
+        return view('artikel.show',compact('artikel'));
     }
     public function create(){
         $kategoriArtikel=KategoriArtikel::pluck('nama','id');

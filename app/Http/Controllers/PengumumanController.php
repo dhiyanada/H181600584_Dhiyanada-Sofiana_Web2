@@ -1,28 +1,28 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Pengumumanl;
-use app\KategoriPengumuman;
+use App\Pengumuman;
+use App\KategoriPengumuman;
 class PengumumanController extends Controller
 {
     public function index(){
       
-        $listPengumuman=Pengumuman::all();  
+        $listPengumuman=Pengumuman::all(); //select*from pengumuman
         return view('pengumuman.index',compact('listPengumuman'));
         
     }
     public function show($id){
         
-        $Pengumuman=Pengumuman::find($id);
-        return view('pengumuman.show',compact('Pengumuman'));
+        $pengumuman=Pengumuman::find($id);
+        return view('pengumuman.show',compact('pengumuman'));
     }
     public function create(){
         $kategoriPengumuman=KategoriPengumuman::pluck('nama','id');
-        return view('artikel.create', compact('kategoriPengumuman'));
+        return view('pengumuman.create', compact('kategoriPengumuman'));
     }
     public function store(Request $request){
         $input= $request->all();
-            Pengumuman::create($input);
+        Pengumuman::create($input);
         return redirect(route('pengumuman.index'));
     }
 }
